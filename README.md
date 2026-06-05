@@ -1,4 +1,4 @@
-# 👵 Senior Care AI Assistant（高齡照護雙語 AI 助手）
+# 👵 Senior Care AI Assistant / 高齡照護 AI 助手
 
 一個專為長者與其家屬設計的無障礙、多模態（語音、視覺、文字）智慧照護系統。
 
