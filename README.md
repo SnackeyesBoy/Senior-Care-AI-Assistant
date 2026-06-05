@@ -203,7 +203,7 @@ GPT-4o Vision
 
 ### 報告內容
 
-#### 🩺 健康摘要
+#### 健康摘要
 
 * 疼痛狀況
 * 睡眠品質
@@ -240,7 +240,7 @@ GPT-4o Vision
                  │         │
        ┌─────────▼─┐   ┌───▼─────────┐
        │ Whisper-1 │   │ GPT-4o Mini │
-       │    STT    │   │ 對話系統     │
+       │    STT    │   │ 對話系統      │
        └───────────┘   └────┬────────┘
                             │
           ┌─────────────────▼────────────┐
@@ -266,7 +266,7 @@ GPT-4o Vision
 
 ## 前端
 
-* Streamlit
+* Streamlit (Base on Python)
 * Custom CSS（高齡友善介面）
 
 ## AI 模型
@@ -286,6 +286,10 @@ GPT-4o Vision
 
 * wttr.in Weather API
 * Google Calendar Template API
+
+## 移動裝置部署展示
+
+* Ngork 
 
 ---
 
