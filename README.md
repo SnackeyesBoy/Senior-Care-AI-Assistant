@@ -11,7 +11,7 @@
 
 ## 🛠️ 如何在本地端執行
 
-1. Clone 專案：`git clone https://github.com/你的帳號/你的專案.git`
+1. Clone 專案：`git clone https://github.com/SnackeyesBoy/Senior-Care-AI-Assistant.git`
 2. 安裝依賴：`pip install -r requirements.txt`
 3. 環境變數：建立 `.env` 檔案，並填入 `OPENAI_API_KEY=你的金鑰`
 4. 啟動系統：`streamlit run app.py`
