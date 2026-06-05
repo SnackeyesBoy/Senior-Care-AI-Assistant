@@ -35,7 +35,7 @@ def save_data(data):
 user_data = load_data()
 
 # ==============================================================================
-# 2. 👵 高齡友善：CSS 樣式強制放大（大字體、大按鈕）
+# 2. 高齡友善 UI
 # ==============================================================================
 st.set_page_config(page_title="Senior Care AI", page_icon="👵", layout="centered")
 
@@ -71,7 +71,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # ==============================================================================
-# 3. 🌐 免費即時天氣抓取函數
+# 3. 免費即時天氣抓取函數
 # ==============================================================================
 def get_live_weather(location="Minxiong"):
     try:
@@ -84,7 +84,7 @@ def get_live_weather(location="Minxiong"):
         return "晴朗偏熱 / 28度"
 
 # ==============================================================================
-# 4. 🤖 多國語言包配置
+# 4. 多國語言包配置
 # ==============================================================================
 LANG_PACK = {
     "繁體中文": {
@@ -294,7 +294,7 @@ with st.sidebar:
     
     st.divider()
     
-    # 🎯 雙語音色切換選單
+    # 雙語音色切換選單
     VOICE_OPTIONS = L["voice_options"]
     selected_voice_name = st.selectbox(L["voice_label"], list(VOICE_OPTIONS.keys()))
     chosen_voice_value = VOICE_OPTIONS[selected_voice_name]
