@@ -513,12 +513,26 @@ if is_chat_mode:
                 try:
                     current_messages = [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
                     
+                    # 🌤️ 即時天氣連動
                     if "天氣" in user_input or "weather" in user_input.lower():
-                        live_weather_info = get_live_weather(location="Shalu")
+                        live_weather_info = get_live_weather(location="Minxiong")
                         weather_prompt = f"【System Info: Current weather is {live_weather_info}. Please blend this naturally into your reply.】"
                         current_messages.insert(-1, {"role": "system", "content": weather_prompt})
 
-                    # 🎯 【最終指令覆蓋法】確保語言精準切換，並避免破壞既有 Prompt 結構
+                    # ⏳ 雙語時間感知與農曆節日推算 (注入在對話的最尾端)
+                    now = datetime.now()
+                    if lang == "繁體中文":
+                        weekdays_tw = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+                        current_time_str = now.strftime("%Y年%m月%d日 %H:%M") + f" ({weekdays_tw[now.weekday()]})"
+                        time_prompt = f"【系統提示時間感知：現在時間是 {current_time_str}。請根據現在的時間給予適切的關心（如午安、該休息了）。另外，請運用你的知識推算今天的「農曆日期」或「近期節氣與傳統節日」，並自然且溫馨地在回覆中跟長者分享或問候！】"
+                    else:
+                        weekdays_en = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+                        current_time_str = now.strftime("%Y-%m-%d %H:%M") + f" ({weekdays_en[now.weekday()]})"
+                        time_prompt = f"【System Info: Current local time is {current_time_str}. Please greet the user based on the time of day. Also, accurately infer today's Traditional Chinese Lunar date or upcoming traditional festivals/solar terms, and naturally share it with the user in your response!】"
+
+                    current_messages.insert(-1, {"role": "system", "content": time_prompt})
+
+                    # 🎯 【最終指令覆蓋法】確保語言精準切換
                     current_messages.append({
                         "role": "system", 
                         "content": "FINAL CRITICAL RULE: You MUST evaluate the language of the user's message above. If it is English, your ENTIRE response MUST be in English. 如果上方使用者的訊息是中文，你的回覆必須全部是中文。"
