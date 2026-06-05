@@ -6,7 +6,7 @@
 
 ---
 
-# 📖 專案背景
+# 專案背景
 
 隨著高齡化社會快速發展，許多長者面臨以下問題：
 
@@ -20,27 +20,27 @@
 
 ---
 
-# 🎯 專案目標
+# 專案目標
 
 本系統聚焦於以下三大照護需求：
 
-### 💬 情感陪伴
+### 情感陪伴
 
 透過自然語言與語音互動，提供溫暖且具同理心的聊天體驗，降低長者孤獨感。
 
-### 💊 用藥管理
+### 用藥管理
 
 利用 AI 視覺辨識與 OCR 技術，自動解析藥袋資訊並建立提醒機制。
 
-### 👨‍👩‍👧 家屬協作
+### 家屬協作
 
 自動生成健康與互動摘要報告，協助家屬掌握長者近期身心狀況。
 
 ---
 
-# ✨ 核心功能
+# 核心功能
 
-## 💬 AI 溫柔陪聊系統
+## AI 溫柔陪聊系統
 
 系統以「孫子／孫女」角色進行陪伴，而非傳統客服式問答。
 
@@ -63,7 +63,7 @@
 
 ---
 
-## 🧠 個人化記憶系統
+## 個人化記憶系統
 
 系統會記錄長者的重要資訊，例如：
 
@@ -81,7 +81,7 @@
 
 ---
 
-## 🌦️ 情境感知陪伴
+## 情境感知陪伴
 
 系統能結合：
 
@@ -101,7 +101,7 @@
 
 ---
 
-## 🚨 危險症狀即時警示系統
+## 危險症狀即時警示系統
 
 為避免高風險健康事件被忽略，系統設計了安全監測機制。
 
@@ -140,9 +140,9 @@
 
 ---
 
-## 📷 藥袋 OCR 智慧解析
+## 藥袋 OCR 智慧解析
 
-長者只需拍攝藥袋照片，系統即可自動辨識內容。
+長者只需拍攝藥袋/藥單 照片，系統即可自動辨識內容。
 
 ### AI 自動擷取資訊
 
@@ -169,7 +169,7 @@ GPT-4o Vision
 
 ---
 
-## 📅 Google Calendar 用藥提醒
+## Google Calendar 用藥提醒
 
 藥袋解析完成後，系統可自動產生 Google Calendar 行程。
 
@@ -190,7 +190,7 @@ GPT-4o Vision
 
 ---
 
-## 📊 家屬健康報告系統
+## 家屬健康報告系統
 
 系統定期分析：
 
@@ -210,14 +210,14 @@ GPT-4o Vision
 * 食慾狀況
 * 行動能力
 
-#### 😊 情緒分析
+#### 情緒分析
 
 * 正向
 * 中性
 * 焦慮
 * 低落
 
-#### 💊 用藥追蹤
+#### 用藥追蹤
 
 * 服藥紀錄
 * 新增藥物
@@ -227,7 +227,7 @@ GPT-4o Vision
 
 ---
 
-# 🏗️ 系統架構
+# 系統架構
 
 ```text
                 ┌─────────────┐
@@ -262,7 +262,7 @@ GPT-4o Vision
 
 ---
 
-# ⚙️ 技術棧
+# 技術棧
 
 ## 前端
 
@@ -289,22 +289,22 @@ GPT-4o Vision
 
 ---
 
-# 🚀 本地端執行
+# 本地端執行
 
-## 1️⃣ Clone 專案
+## Step1/Clone 專案
 
 ```bash
 git clone https://github.com/SnackeyesBoy/Senior-Care-AI-Assistant.git
 cd Senior-Care-AI-Assistant
 ```
 
-## 2️⃣ 安裝套件
+## Step2/安裝套件
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 3️⃣ 設定環境變數
+## Step3/設定環境變數
 
 建立 `.env`
 
@@ -312,13 +312,13 @@ pip install -r requirements.txt
 OPENAI_API_KEY=your_api_key
 ```
 
-## 4️⃣ 啟動系統
+## Step4/啟動系統
 
 ```bash
 streamlit run app.py
 ```
 
-## 5️⃣ 本地部署（手機）
+## Step5/本地部署（手機）
 
 ```bash
  ngrok http 8501                
@@ -326,7 +326,7 @@ streamlit run app.py
 
 ---
 
-# 📂 專案架構
+# 專案架構
 
 ```text
 .
@@ -340,7 +340,7 @@ streamlit run app.py
 
 ---
 
-# 🔬 技術挑戰與解決方案
+# 技術挑戰與解決方案
 
 ### 長者語言切換問題
 
@@ -360,9 +360,10 @@ streamlit run app.py
 
 ---
 
-# 🔮 未來發展方向
+# 未來發展方向
 
 * LINE Bot 整合
+* Line Notify (Line Notify於2025.03.31終止服務）
 * Telegram Bot 整合
 * 家屬即時通知功能
 * 跌倒偵測模型
@@ -374,14 +375,14 @@ streamlit run app.py
 
 ---
 
-# 🏆 專案價值
+# 專案價值
 
 Senior Care AI Assistant 不只是聊天機器人，而是一套結合：
 
-* ❤️ 情感陪伴（Emotional Support）
-* 💊 用藥管理（Medication Management）
-* 🚨 風險預警（Risk Detection）
-* 👨‍👩‍👧 家屬協作（Family Collaboration）
+* 情感陪伴（Emotional Support）
+* 用藥管理（Medication Management）
+* 風險預警（Risk Detection）
+* 家屬協作（Family Collaboration）
 
 的智慧高齡照護平台。
 
