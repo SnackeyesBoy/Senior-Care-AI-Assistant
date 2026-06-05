@@ -1,0 +1,18 @@
+# 環境變數與機密資訊
+.env
+
+# Python 產生的暫存檔
+__pycache__/
+*.pyc
+
+# 本地端產生的使用者測試資料 (視情況決定是否上傳，通常建議忽略)
+user_data.json
+temp_input.wav
+chat_response.mp3
+med_reminder.mp3
+alert.mp3
+
+# 虛擬環境
+venv/
+env/
+.venv/

@@ -1,0 +1,2 @@
+streamlit run main.py
+3EfSERmvtcRHcZZykjtkucbqjSt_3K73yNnfaxsszBeRCeL1j
