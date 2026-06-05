@@ -1,5 +1,6 @@
 # 環境變數與機密資訊
 .env
+Med_list.jpg
 
 # Python 產生的暫存檔
 __pycache__/
