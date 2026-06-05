@@ -372,7 +372,7 @@ st.title(L["title"])
 if is_chat_mode:
     st.write(L["subtitle"])
     
-    # 🎯 完全維持原版的動態 System Prompt
+    # System Prompt
     dynamic_system_prompt = (
         f"你是一位專業的高齡照護陪伴 AI，同時也是一位充滿愛心、耐心、孝順且正向的孫子或孫女。\n"
         f"你正在陪伴的對象是「{short_title}」，請自然且親切地稱呼對方為【{short_title}】。\n"
@@ -513,13 +513,13 @@ if is_chat_mode:
                 try:
                     current_messages = [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
                     
-                    # 🌤️ 即時天氣連動
+                    # 即時天氣連動
                     if "天氣" in user_input or "weather" in user_input.lower():
                         live_weather_info = get_live_weather(location="Minxiong")
                         weather_prompt = f"【System Info: Current weather is {live_weather_info}. Please blend this naturally into your reply.】"
                         current_messages.insert(-1, {"role": "system", "content": weather_prompt})
 
-                    # ⏳ 雙語時間感知與農曆節日推算 (注入在對話的最尾端)
+                    # 雙語時間感知與農曆節日推算 (注入在對話的最尾端)
                     now = datetime.now()
                     if lang == "繁體中文":
                         weekdays_tw = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
@@ -532,7 +532,7 @@ if is_chat_mode:
 
                     current_messages.insert(-1, {"role": "system", "content": time_prompt})
 
-                    # 🎯 【最終指令覆蓋法】確保語言精準切換
+                    #【最終指令覆蓋法】確保語言精準切換
                     current_messages.append({
                         "role": "system", 
                         "content": "FINAL CRITICAL RULE: You MUST evaluate the language of the user's message above. If it is English, your ENTIRE response MUST be in English. 如果上方使用者的訊息是中文，你的回覆必須全部是中文。"
@@ -577,10 +577,10 @@ elif is_ocr_mode:
                 try:
                     base64_image = encode_image_to_base64(uploaded_file)
                     
-                    # 🎯 動態調用多國語言 OCR 提示詞
+                    # 動態調用多國語言 OCR 提示詞
                     prompt = L["ocr_prompt_template"].format(short_title=short_title)
                     
-                    # 🎯 升級至強大的 gpt-4o 旗艦視覺模型
+                    # gpt-4o 旗艦視覺模型
                     response = client.chat.completions.create(
                         model="gpt-4o",
                         messages=[
@@ -647,7 +647,7 @@ elif is_list_mode:
         st.info(L["list_empty"])
     else:
         for idx, med in enumerate(user_data["medications"]):
-            # 🎯 雙語兼容讀取機制
+            # 雙語兼容讀取機制
             med_name = med.get("藥名", med.get("Medication Name", "未知藥物 / Unknown"))
             med_time = med.get("什麼時候吃", med.get("When to take", "未標示 / N/A"))
             med_dose = med.get("吃多少", med.get("Dosage", "未標示 / N/A"))
@@ -660,7 +660,7 @@ elif is_list_mode:
                 
                 st.write("") # 留白排版
                 
-                # 🎯 生成 Google Calendar 邀請網址
+                # 生成 Google Calendar 邀請網址
                 cal_title = f"💊 吃藥提醒: {med_name}" if lang == "繁體中文" else f"💊 Med Reminder: {med_name}"
                 cal_details = f"【時間/Time】: {med_time}\n【劑量/Dosage】: {med_dose}\n【外觀/Appearance】: {med_app}\n\n*由 Senior Care AI 貼心提醒*"
                 
@@ -690,7 +690,7 @@ elif is_report_mode:
         else:
             with st.spinner(L["report_loading"]):
                 try:
-                    # 🎯 雙語動態 Prompt 轉換：根據語言包中的模板填入資料
+                    # 雙語動態 Prompt 轉換：根據語言包中的模板填入資料
                     report_prompt = L["report_prompt_template"].format(
                         chat_logs=json.dumps(user_data["chat_logs"][-15:], ensure_ascii=False),
                         medications=json.dumps(user_data["medications"], ensure_ascii=False)
