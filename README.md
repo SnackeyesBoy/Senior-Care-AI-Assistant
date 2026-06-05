@@ -318,6 +318,12 @@ OPENAI_API_KEY=your_api_key
 streamlit run app.py
 ```
 
+## 5️⃣ 本地部署（手機）
+
+```bash
+ ngrok http 8501                
+```
+
 ---
 
 # 📂 專案架構
