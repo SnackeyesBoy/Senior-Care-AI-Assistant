@@ -289,7 +289,7 @@ GPT-4o Vision
 
 ## 移動裝置部署展示
 
-* Ngork 
+* [Ngork](https://ngrok.com/) 
 
 ---
 
@@ -322,9 +322,11 @@ OPENAI_API_KEY=your_api_key
 streamlit run app.py
 ```
 
-## Step5/本地部署（手機）
+## Step5/本地部署（移動裝置展示）
 
 ```bash
+ brew install ngrok/ngrok/ngrok #MacOS
+ ngrok config add-authtoken 你的密鑰
  ngrok http 8501                
 ```
 
