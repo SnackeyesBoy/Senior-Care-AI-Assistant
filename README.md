@@ -50,7 +50,7 @@
 | 語音辨識 (STT) | OpenAI Whisper-1 |
 | 對話生成與推理 | OpenAI GPT-4o-mini |
 | 語音合成 (TTS) | OpenAI TTS-1（支援4種音色切換） |
-| 即時氣象連動 | wttr.in API |
+| 即時氣象連動 | [wttr.in API](https://wttr.in/) |
 | 本地記憶庫 | JSON Local Storage |
 |移動裝置展示|[Ngork](https://ngrok.com/)|
 
