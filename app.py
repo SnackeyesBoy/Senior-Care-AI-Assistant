@@ -83,7 +83,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # ==============================================================================
-# 3. 外部 API 連動函數（天氣與 LINE 通報）
+# 3. 🌐 外部 API 連動函數（天氣與 LINE 通報）
 # ==============================================================================
 def get_live_weather(location="Minxiong"):
     try:
@@ -323,8 +323,8 @@ else:
 # 6. 側邊欄控制面板
 # ==============================================================================
 with st.sidebar:
-    # 快捷加入 LINE 訂閱功能
-    bot_id = "@609cpspd"  
+    # 加入 LINE 訂閱功能
+    bot_id = "@609cpspd"  # 機器人 ID（包含 @）
     line_add_url = f"https://line.me/R/ti/p/{bot_id}"
     st.subheader("📲 訂閱系統通知" if lang == "繁體中文" else "📲 Subscribe LINE")
     st.link_button("加入 LINE 好友" if lang == "繁體中文" else "🟢 Add LINE Friend", line_add_url)
@@ -337,8 +337,8 @@ with st.sidebar:
     is_chat_mode = (selected_mode == L["modes"][0])
     is_ocr_mode = (selected_mode == L["modes"][1])
     is_list_mode = (selected_mode == L["modes"][2])
-    is_history_mode = (selected_mode == L["modes"][3]) # 📅 當天紀錄檢閱
-    is_report_mode = (selected_mode == L["modes"][4])  # 📊 AI 健康報告
+    is_history_mode = (selected_mode == L["modes"][3]) # 當天紀錄檢閱
+    is_report_mode = (selected_mode == L["modes"][4])  # AI 健康報告
     
     st.divider()
     
@@ -709,7 +709,7 @@ elif is_list_mode:
                     st.rerun()
                 
                 st.write("") 
-                # 🎯 核心修復：還原乾淨的 Google Calendar 網址字串（剔除錯誤嵌入的 Markdown）
+                # 還原乾淨的 Google Calendar 網址字串（剔除錯誤嵌入的 Markdown）
                 cal_title = f"💊 吃藥提醒: {med_name}" if lang == "繁體中文" else f"💊 Med Reminder: {med_name}"
                 cal_details = f"【時間/Time】: {med_time}\n【劑量/Dosage】: {med_dose}\n【外觀/Appearance】: {med_app}\n\n*由 Senior Care AI 貼心提醒*"
                 url_title = urllib.parse.quote(cal_title)
@@ -784,7 +784,7 @@ elif is_history_mode:
     else:
         st.warning(L["report_no_meds"])
 
-# ----------------- 模式 5：📊 AI 健康報告 (新拆分頁面) -----------------
+# ----------------- 模式 5：AI 健康報告 (新拆分頁面) -----------------
 elif is_report_mode:
     st.subheader(L["report_title"])
     st.write(L["report_desc"])
